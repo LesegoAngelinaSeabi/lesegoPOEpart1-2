@@ -4,6 +4,7 @@
  */
 package lesegopoe;
 
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -91,26 +92,27 @@ public class part1Class {
     public String registerUser() {
 
         if (checkUsername(username) && checkPasswordComplexity(password)) {
-            JOptionPane.showMessageDialog(null, "The two above conditions have been met and the user has been registered successfully.","Easy Kanban - Register",JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("The two above conditions have been met and the user has been registered successfully.");
         } else {
-            JOptionPane.showMessageDialog(null, "The two above conditions have been not met the requirements","Easy Kanban - Register",JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("The two above conditions have been not met the requirements");
         }
         
         return "";
     }
 
     public boolean loginUser(String user, String pass) {
-
+       Scanner scan = new Scanner(System.in);
         do {
-
-            user = JOptionPane.showInputDialog(null,"Enter username:","Easy Kanban - Login",JOptionPane.INFORMATION_MESSAGE);
-
-            pass = JOptionPane.showInputDialog(null,"Enter password:","Easy Kanban - Login",JOptionPane.INFORMATION_MESSAGE);
+            System.out.print("Enter username:");
+            user = scan.nextLine();
+            
+             System.out.print("Enter password:");
+            pass = scan.nextLine();
 
             if (user.equals(username) && pass.equals(password)) {
                 istrue = true;
             } else {
-                JOptionPane.showMessageDialog(null, "password or username is incorrect please try again","Easy Kanban - Login",JOptionPane.INFORMATION_MESSAGE);
+                System.out.println("password or username is incorrect please try again");
 
             }
         } while (!istrue); 
@@ -121,10 +123,10 @@ public class part1Class {
     public String Returnlogin() {
 
         if (istrue) {
-            JOptionPane.showMessageDialog(null, "welcome back " + getFirstName() + " " + getLastName(),"Easy Kanban - Login",JOptionPane.INFORMATION_MESSAGE);
+            System.out.println( "welcome back " + getFirstName() + " " + getLastName());
 
         } else {
-            JOptionPane.showMessageDialog(null, "username or password is incorrect please try again","Easy Kanban - Login",JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("username or password is incorrect please try again");
 
         }
 
@@ -132,3 +134,6 @@ public class part1Class {
     }
 
 }
+
+
+

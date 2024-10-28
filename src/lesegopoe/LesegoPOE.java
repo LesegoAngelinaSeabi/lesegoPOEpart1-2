@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package lesegopoe;
-
+import java.util.Scanner;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,39 +16,45 @@ public class LesegoPOE {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+        
+         final JDialog dialog = new JDialog();
+         dialog.setAlwaysOnTop(true);
          
        part1Class userLogin = new part1Class();
         // User registration for account
-        JOptionPane.showMessageDialog(null,"Register your account..........");
-        
-        String firstName = JOptionPane.showInputDialog("Enter your First Name:");
+        System.out.println("Register your account..........");
+         //prompt user to enter their details
+        System.out.println("Enter your First Name:");
+        String firstName = sc.nextLine();
         userLogin.setFirstName(firstName);
         
-       
-        String lastName = JOptionPane.showInputDialog("Enter your Last Name:");
+       System.out.println("Enter your Last Name:");
+        String lastName = sc.nextLine();
         userLogin.setLastName(lastName);
         
-        
-        String username = JOptionPane.showInputDialog("Enter  your Username:");
+        System.out.println("Enter  your Username:");
+        String username = sc.nextLine();
         userLogin.setUsername(username);
         
-        
-        String password = JOptionPane.showInputDialog("Enter your  Password:");
+        System.out.println("Enter your  Password:");
+        String password = sc.nextLine();
         userLogin.setPassword(password);
         
           System.out.println(userLogin.registerUser());
         while (!userLogin.checkUsername(username) || !userLogin.checkPasswordComplexity(password )) {
-          //   JOptionPane.showMessageDialog(null,"username is incorrectly formatted and password does not meet the complexity requirements");
+          
            
-            
-            username = JOptionPane.showInputDialog(null,"Enter your Username:","Easy Kanban - Login",JOptionPane.INFORMATION_MESSAGE);
-            
-            password = JOptionPane.showInputDialog(null,"Enter your Password:","Easy Kanban - Login",JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("Enter your  Username:");
+            username = sc.nextLine();
+            //
+             System.out.println("Enter your  Password:");
+            password = sc.nextLine();
             System.out.println(userLogin.registerUser());
         }
-         // User login their details
+         // User login enter their details
        
         
           userLogin.loginUser(username ,password );
@@ -58,12 +65,14 @@ public class LesegoPOE {
         int Menu =0;
         while(Menu!=3){
             
+            //Allows user to choose a task
          Menu = Integer.parseInt(JOptionPane.showInputDialog("Select an option: \n 1: Add Tasks \n 2: Show Report \n 3: Exit"));
          
          switch(Menu){
              case 1:
                  int accumulatedhours=0;
                  int size=0;
+                
                  size = Integer.parseInt(JOptionPane.showInputDialog("How many tasks do you want to enter"));
                  String [] Taskname = new String[size];
                  String [] TaskDescription = new String[size];
@@ -88,7 +97,6 @@ public class LesegoPOE {
                   
                   TaskId [i]=task.createTaskID(Taskname[i], i, Developer[i]);
                   JOptionPane.showMessageDialog(null,"Task Id:" + TaskId[i]);
-                    
                   int status  = Integer.parseInt(JOptionPane.showInputDialog("Select an option: \n 1: To do \n 2: Done \n 3: Doing"));
                   
                   switch(status){
@@ -111,7 +119,7 @@ public class LesegoPOE {
                  }
             JOptionPane.showMessageDialog(null,"Total of all the taks: " + accumulatedhours);
       
-            
+        
                break;  
              case 2:
                JOptionPane.showMessageDialog(null,"Coming soon");
@@ -125,7 +133,6 @@ public class LesegoPOE {
                  JOptionPane.showMessageDialog(null,"Invalid option");
                  break;
          }
-        }
-    }
-    
+     }
+}
 }
