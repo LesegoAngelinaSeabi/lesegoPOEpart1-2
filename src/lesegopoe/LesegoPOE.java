@@ -74,13 +74,13 @@ public class LesegoPOE {
                  int accumulatedhours=0;
                  int size=0;
                 
-                 size = Integer.parseInt(JOptionPane.showInputDialog("How many tasks do you want to enter"));
-                 String [] Taskname = new String[size];
-                 String [] TaskDescription = new String[size];
-                 String [] Developer = new String[size];
-                 int [] duration = new int [size];
-                 String [] TaskId = new String [size];
-                 String [] Taskstatus = new String [size];
+        size = Integer.parseInt(JOptionPane.showInputDialog("How many tasks do you want to enter"));
+        String [] Taskname = new String[size];
+        String [] TaskDescription = new String[size];
+        String [] Developer = new String[size];
+        int [] duration = new int [size];
+        String [] TaskId = new String [size];
+        String [] Taskstatus = new String [size];
                  
                  
                  
@@ -100,7 +100,7 @@ public class LesegoPOE {
                       TaskId [i]=task.createTaskID(Taskname[i], i, Developer[i]);
                       JOptionPane.showMessageDialog(null,"Task Id:" + TaskId[i]);
                       int status  = Integer.parseInt(JOptionPane.showInputDialog("Select an option: \n 1: To do \n 2: Done \n 3: Doing"));
-//switch casse for the tasks
+                       //switch casse for the tasks
                       switch(status){
                           case 1:
                               Taskstatus[i]="To do";

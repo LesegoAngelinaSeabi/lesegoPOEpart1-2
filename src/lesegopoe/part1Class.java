@@ -48,6 +48,7 @@ public class part1Class {
     }
 
     private boolean istrue = false;
+    
     // Check if the username is correct
 
     public boolean checkUsername(String username) {
