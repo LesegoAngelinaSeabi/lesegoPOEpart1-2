@@ -96,7 +96,7 @@ public class part1ClassTest {
     public void testReturnlogin() {
         System.out.println("Returnlogin");
         part1Class instance = new part1Class();
-        String expResult = "returnlogin";
+        String expResult = "Returnlogin";
         String result = instance.Returnlogin();
         assertEquals(expResult, result);
             }

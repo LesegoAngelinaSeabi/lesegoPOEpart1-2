@@ -56,7 +56,7 @@ public class LesegoPOE {
             System.out.println(userLogin.registerUser());
         }
         
-         // User login enter their details
+         // User login allows users to enter their deatils
       
          
           userLogin.loginUser(username ,password );
