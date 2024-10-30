@@ -96,11 +96,9 @@ public class part1ClassTest {
     public void testReturnlogin() {
         System.out.println("Returnlogin");
         part1Class instance = new part1Class();
-        String expResult = "";
+        String expResult = "returnlogin";
         String result = instance.Returnlogin();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+            }
     
 }

@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author RC_Student_lab
  */
-//class to call out the methods
+//class to call out the task methods
 public class Task {
     public boolean checkTaskDescription(String Description){
         boolean verify = false;

@@ -108,7 +108,7 @@ public class TaskTest {
         String id = "";
         int duration = 8;
         Task instance = new Task();
-        String expResult = "status, number, taskname, description, id, duration";
+        String expResult = "instance.printTaskDetails(status, number, taskname, description, id, duration";
         String result = instance.printTaskDetails(status, number, taskname, description, id, duration);
         assertEquals(expResult, result);
        

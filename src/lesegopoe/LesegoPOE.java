@@ -17,7 +17,7 @@ public class LesegoPOE {
      * @param args the command line arguments
      */
         public static void main(String[] args) {
-        // TODO code application logic here
+        // Scanner
         Scanner sc = new Scanner(System.in);
         
          final JDialog dialog = new JDialog();
@@ -50,14 +50,15 @@ public class LesegoPOE {
            
             System.out.println("Enter your  Username:");
             username = sc.nextLine();
-            //
+            
              System.out.println("Enter your  Password:");
             password = sc.nextLine();
             System.out.println(userLogin.registerUser());
         }
-         // User login enter their details
-       
         
+         // User login enter their details
+      
+         
           userLogin.loginUser(username ,password );
         
         userLogin.Returnlogin();
@@ -87,7 +88,7 @@ public class LesegoPOE {
                 for (int i = 0; i < size; i++) {
                      
                     Taskname[i] = JOptionPane.showInputDialog("Enter taskname:");
-
+//methods
                     do{
                         TaskDescription[i]=JOptionPane.showInputDialog("Enter task Description(MAX 50 characters):");  
                      }while(
@@ -100,6 +101,7 @@ public class LesegoPOE {
                       TaskId [i]=task.createTaskID(Taskname[i], i, Developer[i]);
                       JOptionPane.showMessageDialog(null,"Task Id:" + TaskId[i]);
                       int status  = Integer.parseInt(JOptionPane.showInputDialog("Select an option: \n 1: To do \n 2: Done \n 3: Doing"));
+                      
                        //switch casse for the tasks
                       switch(status){
                           case 1:
@@ -120,9 +122,9 @@ public class LesegoPOE {
                      accumulatedhours= accumulatedhours+ task.ReturnTotalHours(duration[i]);
                 }
             JOptionPane.showMessageDialog(null,"Total of all the taks: " + size);
-      
-        
-               break;  
+    
+            
+              break;  
              case 2:
                JOptionPane.showMessageDialog(null,"Coming soon");
 

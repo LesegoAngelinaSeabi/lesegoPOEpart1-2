@@ -14,7 +14,8 @@ import javax.swing.JOptionPane;
 public class part1Class {
 
     private String firstName, lastName, password, username;
-//the get and set methods
+    
+//the get and set methods for firstname,lastname,password and username
     public String getFirstName() {
         return firstName;
     }
