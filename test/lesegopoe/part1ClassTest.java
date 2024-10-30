@@ -45,12 +45,10 @@ public class part1ClassTest {
         System.out.println("kyk_1");
         String username = "kyk_1";
         part1Class instance = new part1Class();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.checkUsername(username);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("kyle!!!");
-    }
+           }
 
     /**
      * Test of checkPasswordComplexity method, of class part1Class.
@@ -60,11 +58,10 @@ public class part1ClassTest {
         System.out.println("Ch&&sec@ke99!");
         String password = "Ch&&sec@ke99!";
         part1Class instance = new part1Class();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.checkPasswordComplexity(password);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("password");
+        
     }
 
     /**
@@ -77,25 +74,20 @@ public class part1ClassTest {
         String expResult = "";
         String result = instance.registerUser();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
+            }
     /**
      * Test of loginUser method, of class part1Class.
      */
     @Test
     public void testLoginUser() {
         System.out.println("loginUser");
-        String user = "";
-        String pass = "";
+        String user = "username";
+        String pass = "username";
         part1Class instance = new part1Class();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.loginUser(user, pass);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+            }
 
     /**
      * Test of Returnlogin method, of class part1Class.

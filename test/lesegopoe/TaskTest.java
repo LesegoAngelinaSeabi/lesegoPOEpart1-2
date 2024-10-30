@@ -39,68 +39,120 @@ public class TaskTest {
     /**
      * Test of checkTaskDescription method, of class Task.
      */
+    //Task 1
     @Test
-    public void testCheckTaskDescription() {
-        System.out.println("login feature");
+    public void testCheckTaskDescription1() {
+        System.out.println("Check Task Description");
         String Description = "create login to authenticate users";
         Task instance = new Task();
         boolean expResult = true;
         boolean result = instance.checkTaskDescription(Description);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("do again");
+        
     }
+    //Task 2
+    @Test
+    public void testCheckTaskDescription2() {
+        System.out.println("Check Task Description");
+        String Description = "create add task feature to add task users";
+        Task instance = new Task();
+        boolean expResult = true;
+        boolean result = instance.checkTaskDescription(Description);
+        assertEquals(expResult, result);
+        
+    }
+
 
     /**
      * Test of createTaskID method, of class Task.
      */
-    @Test
-    public void testCreateTaskID() {
-        System.out.println("");
-        String createTaskID = "auto generated";
+    //task 1
+    
+ @Test
+    public void testCreateTaskID1() {
+        System.out.println("create taskID");
+        String Taskname = "login Feature";
         int number = 0;
         String developer = "Robyn Harrison";
         Task instance = new Task();
-        String expResult = "auto generated";
-        String result = instance.createTaskID(createTaskID, number, developer);
+        String expResult = "LO:0:SON";
+        String result = instance.createTaskID(Taskname, number, developer);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("do again");
+        
+    }
+    //task 2
+    @Test
+    public void testCreateTaskID2() {
+        System.out.println("create taskID");
+        String Taskname = "Add task feature";
+        int number = 1;
+        String developer = "Mike smith";
+        Task instance = new Task();
+        String expResult = "AD:1:ITH";
+        String result = instance.createTaskID(Taskname, number, developer);
+        assertEquals(expResult, result);
+        
     }
 
     /**
      * Test of printTaskDetails method, of class Task.
      */
+    //Task 1
     @Test
-    public void testPrintTaskDetails() {
+    public void testPrintTaskDetails1() {
         System.out.println("Robyn harrison");
         String status = "To do";
         int number = 0;
         String taskname = "Login feature";
         String description = "create login to authenticate users";
-        String id = "Auto generated";
+        String id = "";
         int duration = 8;
         Task instance = new Task();
-        String expResult = "";
+        String expResult = "status, number, taskname, description, id, duration";
         String result = instance.printTaskDetails(status, number, taskname, description, id, duration);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("do again");
+       
+    }
+//Task 2
+    public void testPrintTaskDetails2() {
+        System.out.println("Mike smith");
+        String status = "Doing";
+        int number = 0;
+        String taskname = "Add task feature";
+        String description = "create add task feature to add task users";
+        String id = " ";
+        int duration = 10;
+        Task instance = new Task();
+        String expResult = "status, number, taskname, description, id, duration";
+        String result = instance.printTaskDetails(status, number, taskname, description, id, duration);
+        assertEquals(expResult, result);
+       
     }
 
     /**
      * Test of ReturnTotalHours method, of class Task.
      */
+    //task 1
     @Test
     public void testReturnTotalHours() {
-        System.out.println("8hours");
+        System.out.println("total hours");
         int hours = 8;
         Task instance = new Task();
-        int expResult = 0;
+        int expResult = 8;
         int result = instance.ReturnTotalHours(hours);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+    }
+    //Task 2
+    @Test
+    public void testReturnTotalHours2() {
+        System.out.println("total hours");
+        int hours = 10;
+        Task instance = new Task();
+        int expResult = 10;
+        int result = instance.ReturnTotalHours(hours);
+        assertEquals(expResult, result);
+        
     }
     
 }

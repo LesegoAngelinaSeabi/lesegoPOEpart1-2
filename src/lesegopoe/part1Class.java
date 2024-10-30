@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class part1Class {
 
     private String firstName, lastName, password, username;
-
+//the get and set methods
     public String getFirstName() {
         return firstName;
     }
@@ -48,6 +48,7 @@ public class part1Class {
     }
 
     private boolean istrue = false;
+    
     // Check if the username is correct
 
     public boolean checkUsername(String username) {
@@ -99,7 +100,7 @@ public class part1Class {
         
         return "";
     }
-
+//user login
     public boolean loginUser(String user, String pass) {
        Scanner scan = new Scanner(System.in);
         do {
