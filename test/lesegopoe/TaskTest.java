@@ -134,7 +134,7 @@ public class TaskTest {
      */
     //task 1
     @Test
-    public void testReturnTotalHours() {
+    public void testReturnTotalHours1() {
         System.out.println("total hours");
         int hours = 8;
         Task instance = new Task();

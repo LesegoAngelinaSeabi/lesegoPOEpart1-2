@@ -101,7 +101,7 @@ public class part1Class {
         
         return "";
     }
-//user login
+//user login method
     public boolean loginUser(String user, String pass) {
        Scanner scan = new Scanner(System.in);
         do {
