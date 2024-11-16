@@ -15,7 +15,8 @@ public class part1Class {
 
     private String firstName, lastName, password, username;
     
-//the get and set methods for firstname,lastname,password and username
+// Getter and setter methods for first name, last name, username, and password
+
     public String getFirstName() {
         return firstName;
     }
@@ -47,13 +48,15 @@ public class part1Class {
     public void setUsername(String username) {
         this.username = username;
     }
+    // Boolean flag to check if the user is successfully logged in
 
     private boolean istrue = false;
     
-    // Check if the username is correct
-
+   // Method to check if the username is valid
     public boolean checkUsername(String username) {
         boolean validate = false;
+        
+        // Username must be at least 6 characters long and contain an underscore
         if (username.length() <= 5 && username.contains("_")) {
             
             validate = true;
@@ -63,8 +66,7 @@ public class part1Class {
         }
         return validate;
     }
-    // Check the passwordcomplexity 
-
+       // Method to check if the password meets complexity requirements
     public boolean checkPasswordComplexity(String password) {
         boolean hasCapitalLetter = false;
         boolean hasNumber = false;
@@ -72,6 +74,8 @@ public class part1Class {
         boolean verify = false;
 
         if (password.length() >= 8) {
+            // Check each character of the password to see if it meets the complexity criteria
+
             for (char ch : password.toCharArray()) {
                 if (Character.isUpperCase(ch)) {
                     hasCapitalLetter = true;
@@ -89,7 +93,7 @@ public class part1Class {
         }
         return verify;
     }
-    // Register the user by checking username and password validity
+   // Method to register the user by checking the validity of the username and password
 
     public String registerUser() {
 
@@ -101,9 +105,12 @@ public class part1Class {
         
         return "";
     }
-//user login method
+// User login method, prompts the user to enter username and password
+
     public boolean loginUser(String user, String pass) {
        Scanner scan = new Scanner(System.in);
+       
+       //loop until the user enters correct username and password
         do {
             System.out.print("Enter username:");
             user = scan.nextLine();
@@ -121,7 +128,7 @@ public class part1Class {
                  
         return istrue;
     }
-
+//method to return a message showing the results of the login attempt
     public String Returnlogin() {
 
         if (istrue) {

@@ -17,7 +17,7 @@ public class LesegoPOE {
      * @param args the command line arguments
      */
         public static void main(String[] args) {
-        // Scanner
+        // create a Scanner object for user input
         Scanner sc = new Scanner(System.in);
         
          final JDialog dialog = new JDialog();
@@ -27,7 +27,7 @@ public class LesegoPOE {
         // User registration for account
         System.out.println("Register your account..........");
         
-         //prompt user to enter their details
+         //prompt user to register their details
         System.out.println("Enter your First Name:");
         String firstName = sc.nextLine();
         userLogin.setFirstName(firstName);
@@ -45,6 +45,8 @@ public class LesegoPOE {
         userLogin.setPassword(password);
         
           System.out.println(userLogin.registerUser());
+          
+          //check if the entered username and password meet the required criteria
         while (!userLogin.checkUsername(username) || !userLogin.checkPasswordComplexity(password )) {
           
            
@@ -53,28 +55,35 @@ public class LesegoPOE {
             
              System.out.println("Enter your  Password:");
             password = sc.nextLine();
+            //Register the user
             System.out.println(userLogin.registerUser());
         }
         
-         // User login allows users to enter their deatils
+         // User login  with entered username and password
       
          
-          userLogin.loginUser(username ,password );
+         userLogin.loginUser(username ,password );
         
         userLogin.Returnlogin();
+        //Show a welcome message using JOptionPane
         JOptionPane.showMessageDialog(null,"WELCOME TO EASYKANBAN");
+        
+        //create a task object for task management
         Task task = new Task ();
+        
+        //Menu variable to control the loop and select options
         int Menu =0;
         while(Menu!=3){
             
-            //Allows user to choose a task
+        //Display menu options to the user and capture their choice
          Menu = Integer.parseInt(JOptionPane.showInputDialog("Select an option: \n 1: Add Tasks \n 2: Show Report \n 3: Exit"));
          
          switch(Menu){
              case 1:
                  int accumulatedhours=0;
                  int size=0;
-                
+                 
+        //Declaring arrays to hold task details
         size = Integer.parseInt(JOptionPane.showInputDialog("How many tasks do you want to enter"));
         String [] Taskname = new String[size];
         String [] TaskDescription = new String[size];
@@ -84,11 +93,11 @@ public class LesegoPOE {
         String [] Taskstatus = new String [size];
                  
                  
-                 
+            //Loop to input task details 
                 for (int i = 0; i < size; i++) {
-                     
+                     //Prompt user to enter taskname
                     Taskname[i] = JOptionPane.showInputDialog("Enter taskname:");
-//methods
+                    //check if the task description is within the character limit
                     do{
                         TaskDescription[i]=JOptionPane.showInputDialog("Enter task Description(MAX 50 characters):");  
                      }while(
@@ -96,31 +105,41 @@ public class LesegoPOE {
 
 
                       Developer[i]=JOptionPane.showInputDialog("Firstname and lastname");
+                      //Prompt user to enter the task duration in hours
                       duration[i]=Integer.parseInt(JOptionPane.showInputDialog("Enter task duration of (in hours)"));
-
+                      
+                    //create task Id
                       TaskId [i]=task.createTaskID(Taskname[i], i, Developer[i]);
                       JOptionPane.showMessageDialog(null,"Task Id:" + TaskId[i]);
-                      int status  = Integer.parseInt(JOptionPane.showInputDialog("Select an option: \n 1: To do \n 2: Done \n 3: Doing"));
                       
-                       //switch casse for the tasks
+                    //Prompt user to select a task option
+                     int status  = Integer.parseInt(JOptionPane.showInputDialog("Select an option: \n 1: To do \n 2: Done \n 3: Doing"));
+                      
+                     //select the task status based on the user's input
                       switch(status){
-                          case 1:
-                              Taskstatus[i]="To do";
+                     case 1:
+                        Taskstatus[i]="To do";
                            break;
 
-                          case 2:
-                              Taskstatus[i]="Done";
+                     case 2:
+                        Taskstatus[i]="Done";
                               break;
 
-                          case 3:
-                              Taskstatus[i]="Doing";
+                     case 3:
+                        Taskstatus[i]="Doing";
                               break;
                         }
-                      JOptionPane.showMessageDialog(null,"Task status:" + Taskstatus[i]);
+                JOptionPane.showMessageDialog(null,"Task status:" + Taskstatus[i]);
                       
+                //Print out the task details using the Task object
+
                       task.printTaskDetails( Taskstatus[i], i, Taskname[i], TaskDescription[i],  TaskId [i], duration [i]);
-                     accumulatedhours= accumulatedhours+ task.ReturnTotalHours(duration[i]);
+                // Accumulate the total hours for all tasks entered
+
+                accumulatedhours= accumulatedhours+ task.ReturnTotalHours(duration[i]);
                 }
+                // Display the total number of tasks entered
+
             JOptionPane.showMessageDialog(null,"Total of all the taks: " + size);
     
             
