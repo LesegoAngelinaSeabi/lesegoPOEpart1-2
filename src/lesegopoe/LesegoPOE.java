@@ -47,7 +47,7 @@ public class LesegoPOE {
     String password = sc.nextLine();
     userLogin.setPassword(password);
     
-
+//fix this part
     System.out.println(userLogin.registerUser());
 
     // Check if the entered username and password meet the required criteria
