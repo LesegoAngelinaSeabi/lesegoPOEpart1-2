@@ -46,6 +46,7 @@ public class LesegoPOE {
     System.out.print("Enter your Password: ");
     String password = sc.nextLine();
     userLogin.setPassword(password);
+    
 
     System.out.println(userLogin.registerUser());
 
@@ -63,7 +64,7 @@ public class LesegoPOE {
     // User login with entered username and password
     userLogin.loginUser(username, password);
     userLogin.Returnlogin();
-
+//part 2
     // Show a welcome message using JOptionPane
     JOptionPane.showMessageDialog(null, "WELCOME TO EASYKANBAN");
 

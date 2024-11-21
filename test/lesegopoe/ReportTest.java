@@ -42,15 +42,16 @@ public class ReportTest {
     @Test
     public void testDisplayReport() {
         System.out.println("displayReport");
-        String[] statuses = null;
-        String[] developers = null;
-        String[] Taskdescript = null;
-        String[] taskNames = null;
-        String[] taskIds = null;
-        int[] durations = null;
+        String[] statuses = {"To do","doing","Done","To do"};
+        String[] developers = {"Mike smith","Edward harrison","samantha paulson","Glenda  Oberholzer"};
+        String[] Taskdescript = {"T1","T2","T3","T4"};
+        String[] taskNames = {"create login","Create add features","create reports","add arrays"};
+        String[] taskIds ={"T1","T2","T3","T4"};
+        int[] durations = {5,8,2,11};
         Report instance = new Report();
         instance.displayReport(statuses, developers, Taskdescript, taskNames, taskIds, durations);
-            }
+        
+    }
 
     /**
      * Test of displayDoneTasks method, of class Report.
@@ -58,10 +59,10 @@ public class ReportTest {
     @Test
     public void testDisplayDoneTasks() {
         System.out.println("displayDoneTasks");
-        String[] statuses = null;
-        String[] developers = null;
-        String[] taskNames = null;
-        int[] durations = null;
+        String[] statuses = {"To do","doing","Done","To do"};
+        String[] developers = {"Mike smith","Edward harrison","samantha paulson","Glenda  Oberholzer"};
+        String[] taskNames = {"create login","Create add features","create reports","add arrays"};
+        int[] durations = {5,8,2,11};
         Report instance = new Report();
         instance.displayDoneTasks(statuses, developers, taskNames, durations);
             }
@@ -72,9 +73,9 @@ public class ReportTest {
     @Test
     public void testDisplayLongestTask() {
         System.out.println("displayLongestTask");
-        int[] durations = null;
-        String[] developers = null;
-        String[] taskNames = null;
+        int[] durations = {5,8,2,11};
+        String[] developers = {"Mike smith","Edward harrison","samantha paulson","Glenda  Oberholzer"};
+        String[] taskNames = {"create login","Create add features","create reports","add arrays"};
         Report instance = new Report();
         instance.displayLongestTask(durations, developers, taskNames);
             }
@@ -85,25 +86,25 @@ public class ReportTest {
     @Test
     public void testSearchTaskByName() {
         System.out.println("searchTaskByName");
-        String[] taskNames = null;
-        String[] developers = null;
-        String[] statuses = null;
+        String[] taskNames = {"create login","Create add features","create reports","add arrays"};
+        String[] developers = {"Mike smith","Edward harrison","samantha paulson","Glenda  Oberholzer"};
+        String[] statuses = {"To do","doing","Done","To do"};
         Report instance = new Report();
         instance.searchTaskByName(taskNames, developers, statuses);
-            }
-
+    }
     /**
      * Test of searchTasksByDeveloper method, of class Report.
      */
     @Test
     public void testSearchTasksByDeveloper() {
         System.out.println("searchTasksByDeveloper");
-        String[] developers = null;
-        String[] taskNames = null;
-        String[] statuses = null;
+        String[] developers = {"Mike smith","Edward harrison","samantha paulson","Glenda  Oberholzer"};
+        String[] taskNames = {"create login","Create add features","create reports","add arrays"};
+        String[] statuses = {"To do","doing","Done","To do"};
         Report instance = new Report();
         instance.searchTasksByDeveloper(developers, taskNames, statuses);
-           }
+        
+    }
 
     /**
      * Test of deleteTask method, of class Report.
@@ -111,14 +112,14 @@ public class ReportTest {
     @Test
     public void testDeleteTask() {
         System.out.println("deleteTask");
-        String[] statuses = null;
-        String[] taskDescript = null;
-        String[] developers = null;
-        String[] taskNames = null;
-        String[] taskIds = null;
-        int[] durations = null;
+        String[] statuses = {"To do","doing","Done","To do"};
+        String[] taskDescript = {"T1","T2","T3","T4"};
+        String[] developers = {"Mike smith","Edward harrison","samantha paulson","Glenda  Oberholzer"};
+        String[] taskNames = {"create login","Create add features","create reports","add arrays"};
+        String[] taskIds = {"T1","T2","T3","T4"};
+        int[] durations = {5,8,2,11};
         Report instance = new Report();
         instance.deleteTask(statuses, taskDescript, developers, taskNames, taskIds, durations);
-            }
+           }
     
 }
